@@ -15,3 +15,8 @@ cursor.execute(select_all_books_query)
 rows = cursor.fetchall()
 for book in rows:
     print(book)
+
+'''
+Beknazar Turdiqulov
+
+'''
