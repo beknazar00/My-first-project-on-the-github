@@ -45,3 +45,7 @@ class Product:
 
 samsung  = Product('Samsung S 24 Ultra','The bestest product',24142.212,'image1')
 samsung.save()
+
+
+def func():
+  print('123)
