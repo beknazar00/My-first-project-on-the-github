@@ -22,6 +22,7 @@ cursor = conn.cursor()
 # conn.commit()
 
 class Product:
+    
     def __init__(self,name:str,
                  description:Optional[str]=None,
                  price : Optional[float] = None,
@@ -32,6 +33,12 @@ class Product:
         self.price = price
         self.image = image
     
+    @staticmethod
+    def product_list():
+        get_products_all = 'select * from product;'
+        cursor.execute(get_products_all)
+        for product in cursor.fetchall():
+            print(product)
     
     def save(self):
         insert_into_query = '''
@@ -43,9 +50,6 @@ class Product:
         conn.commit()
 
 
-samsung  = Product('Samsung S 24 Ultra','The bestest product',24142.212,'image1')
-samsung.save()
-
-
-def func():
-  print('123)
+# samsung  = Product('Samsung S 24 Ultra','The bestest product',24142.212,'image1')
+# samsung.save()
+Product.product_list()
